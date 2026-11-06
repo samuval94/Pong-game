@@ -1,0 +1,26 @@
+class Marcador {
+    field int puntos1, puntos2;
+
+    constructor Marcador new() {
+        let puntos1 = 0;
+        let puntos2 = 0;
+        do dibujar();
+        return this;
+    }
+
+    method void dibujar() {
+        do Output.moveCursor(1, 28);
+        do Output.printInt(puntos1);
+        do Output.moveCursor(1, 35);
+        do Output.printInt(puntos2);
+        return;
+    }
+
+    method void borrar() {
+        do Output.moveCursor(1, 28);
+        do Output.printString("  ");
+        do Output.moveCursor(1, 35);
+        do Output.printString("  ");
+        return;
+    }
+}

@@ -1,0 +1,37 @@
+class Juego {
+    field Tablero tablero;
+    field Bate bate, bate2;
+    field Pelota pelota;
+    field Marcador marcador;
+
+    constructor Juego new() {
+        let tablero = Tablero.new();
+        let bate = Bate.new(0, 96, 8, 61);
+        let bate2 = Bate.new(503, 96, 8, 61);
+        let pelota = Pelota.new(252, 124, 8);
+        let marcador = Marcador.new();
+        return this;
+    }
+
+    method void correr() {
+        var char tecla;
+
+        while (true) {
+            let tecla = Keyboard.keyPressed();
+            if (tecla = 131) {
+                do bate2.mover(-2);
+            }
+            if (tecla = 133) {
+                do bate2.mover(2);
+            }
+            if ((tecla = 87) | (tecla = 119)) {
+                do bate.mover(-2);
+            }
+            if ((tecla = 83) | (tecla = 115)) {
+                do bate.mover(2);
+            }
+            do Sys.wait(10);
+        }
+        return;
+    }
+}

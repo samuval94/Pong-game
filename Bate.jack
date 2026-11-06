@@ -1,0 +1,53 @@
+
+class Bate {
+
+    field int x, y;
+    field int ancho, largo;
+
+    constructor Bate new(int Ax, int Ay, int Aancho, int Alargo) {
+        let x = Ax;
+        let y = Ay;
+        let ancho = Aancho;
+        let largo = Alargo;
+        do dibujar();
+        return this;
+    }
+
+    method void dibujar() {
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x, y, x + ancho, y + largo);
+        return;
+
+    }
+
+    method void borrar() {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, x + ancho, y + largo);
+        return;
+    }
+
+    method int bordeIzquierdo() {
+        return x;
+    }
+
+    method int bordeDerecho() {
+        return x + ancho;
+    }
+
+    method void anchoBate(int Aancho) {
+        do borrar();
+        let ancho = Aancho;
+        do dibujar();
+        return;
+    }
+
+    method void mover (int dy) {
+        if (((y + dy) < 0) | ((y + dy) > 194)) {
+            return;
+        }
+        do borrar();
+        let y = y + dy;
+        do dibujar();
+        return;
+    }
+}
