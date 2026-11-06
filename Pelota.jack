@@ -1,0 +1,24 @@
+class Pelota {
+    field int x, y;
+    field int tamaño;
+
+    constructor Pelota new(int Ax, int Ay, int Atamaño) {
+        let x = Ax;
+        let y = Ay;
+        let tamaño = Atamaño;
+        do dibujar();
+        return this;
+    }
+
+    method void dibujar() {
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x, y, x + tamaño - 1, y + tamaño - 1);
+        return;
+    }
+
+    method void borrar() {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, x + tamaño - 1, y + tamaño - 1);
+        return;
+    }
+}

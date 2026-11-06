@@ -1,0 +1,20 @@
+class Tablero {
+    field int xRed, largoSegmento;
+    constructor Tablero new() {
+        let xRed = 255;
+        let largoSegmento = 8;
+        do dibujar();
+        return this;
+    }
+
+    method void dibujar() {
+        var int y;
+        do Screen.setColor(true);
+        let y = 0;
+        while (y < 256) {
+            do Screen.drawRectangle(xRed, y, xRed + 1, y + largoSegmento - 1);
+            let y = y + (largoSegmento * 2);
+        }
+        return;
+    }
+}
